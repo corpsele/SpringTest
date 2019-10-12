@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="fefdc7c6-6d28-4381-bdae-ec2ceecfdc55" />
+      <option name="name" value="fefdc7c6-6d28-4381-bdae-ec2ceecfdc55" />
+      <option name="url" value="https://repo.spring.io/plugins-release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="bc377173-2bed-4f16-af90-e784d95f4723" />
+      <option name="name" value="bc377173-2bed-4f16-af90-e784d95f4723" />
+      <option name="url" value="https://maven.atlassian.com/3rdparty/" />
+    </remote-repository>
+  </component>
+</project>
