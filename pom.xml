@@ -31,7 +31,7 @@
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
-            <version>2.3.15.3</version>
+            <version>2.3.35</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.opensymphony/xwork -->
         <dependency>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>org.apache.struts.xwork</groupId>
             <artifactId>xwork-core</artifactId>
-            <version>2.3.15.3</version>
+            <version>2.3.35</version>
         </dependency>
         <dependency>
             <groupId>ognl</groupId>
@@ -77,7 +77,14 @@
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-convention-plugin</artifactId>
-            <version>2.3.15.3</version>
+            <version>2.3.35</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.2.5.RELEASE</version>
+        </dependency>
+
     </dependencies>
 </project>

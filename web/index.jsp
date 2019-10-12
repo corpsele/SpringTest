@@ -9,10 +9,10 @@
 <html>
 <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
   <head>
-    <title>$Title$</title>
+    <title>SpringTest</title>
   </head>
   <body>
-  $END$
+
   <script>
      $(function () {
        alert("ready");
