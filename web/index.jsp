@@ -9,6 +9,8 @@
 <html>
 <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/js/ajaxForm.js"></script>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/jquery-ui.css"></link>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/jquery-ui.theme.css"></link>
 <head>
     <title>SpringTest</title>
 </head>
@@ -53,17 +55,23 @@
     }
 
     function postSuccess(response) {
-        alert(response);
+        alert(JSON.stringify(response));
     }
 
 </script>
 
-<form id="form1" name="form1" action="Add.action" method="post">
+<form id="form1" name="form1" action="Add.action" method="post" class="ui-widget">
     <input type="text" id="userName" name="userName">
     <input type="text" id="password" name="password">
-    <input type="submit" value="提交" id="submit" name="submit">
+    <input type="submit" value="提交" id="submit" name="submit" class="ui-selectable">
 </form>
 <hr>
-<input type="button" value="post" id="btnPost" name="btnPost" onclick="doPostSubmit()">
+<input type="button" value="post" id="btnPost" name="btnPost" onclick="doPostSubmit()" class="ui-button">
+<hr>
+<form id="form2" name="form2" action="lists/list.form" method="post" class="ui-widget">
+    <input type="text" id="userName1" name="userName1">
+    <input type="text" id="password1" name="password1">
+    <input type="submit" value="提交" id="submit1" name="submit1" class="ui-selectable">
+</form>
 </body>
 </html>

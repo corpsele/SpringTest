@@ -7,10 +7,14 @@
 <struts>
     <package name="default" namespace="/" extends="struts-default">
         <action name="createUser" class="action.UserAction">
-            <result name="success">/</result>
+            <result name="success" type="dispatcher">
+                <param name="">/</param>
+            </result>
         </action>
         <action name="Add" class="action.UserAction" method="Add">
-            <result name="add">/</result>
+            <result name="add" type="dispatcher">
+                <param name="location">/</param>
+            </result>
         </action>
     </package>
 </struts>
