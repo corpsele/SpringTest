@@ -47,11 +47,20 @@
         //     error: errCallBack,
         //     dataType: "text"
         // });
-        $(submit).click();
+        $.ajax({
+           type: "post",
+            url: "http://localhost:8080/SpringTest/Add.action",
+            data: JSON.stringify({"userName": "4545", "passsword": "dfadfadf"}),
+            dataType: "json",
+            // contentType: "application/x-www-form-urlencoded;charset=utf-8",
+            contentType: "application/json;charset=utf-8",
+            success: postSuccess,
+            error: errCallBack
+        });
     }
 
     function errCallBack(err) {
-        alert(err);
+        alert(JSON.stringify(err));
     }
 
     function postSuccess(response) {
