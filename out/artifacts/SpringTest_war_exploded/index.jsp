@@ -49,8 +49,8 @@
         // });
         $.ajax({
            type: "post",
-            url: "http://localhost:8080/SpringTest/Add.action",
-            data: JSON.stringify({"userName": "4545", "passsword": "dfadfadf"}),
+            url: "http://localhost:8182/SpringTest/user/addUser.form",
+            data: JSON.stringify({"username": "4545", "passsword": "dfadfadf"}),
             dataType: "json",
             // contentType: "application/x-www-form-urlencoded;charset=utf-8",
             contentType: "application/json;charset=utf-8",
