@@ -37,7 +37,7 @@ public class UserDao {
      * @author janinus
      */
     public List<UserMode> queryAll() {
-        String sql = "select id,name,javaScore,htmlScore,cssScore from student";
+        String sql = "select id,username,password from users";
         //将查询结果映射到Student类中，添加到list中，并返回
         return jdbcTemplate.query(sql, new UserMapper());
     }
@@ -50,7 +50,7 @@ public class UserDao {
      * @author janinus
      */
     public List<UserMode> queryByName(String name) {
-        String sql = "select id,name,javaScore,htmlScore,cssScore from student where name like '%" + name + "%'";
+        String sql = "select id,username,password from users where name like '%" + name + "%'";
         return jdbcTemplate.query(sql, new UserMapper());
     }
 
@@ -62,7 +62,7 @@ public class UserDao {
      * @author janinus
      */
     public boolean addStu(UserMode userMode) {
-        String sql = "insert into student(id,name,javaScore,htmlScore,cssScore) values(0,?,?,?,?)";
+        String sql = "insert into users(username,password) values(?,?)";
         return jdbcTemplate.update(sql,
                 new Object[] { userMode.getUsername(), userMode.getPassword()},
                 new int[] { Types.VARCHAR, Types.VARCHAR}) == 1;
@@ -76,7 +76,7 @@ public class UserDao {
      * @author janinus
      */
     public boolean deleteStu(Integer id) {
-        String sql = "delete from student where id = ?";
+        String sql = "delete from users where id = ?";
         return jdbcTemplate.update(sql, id) == 1;
     }
 
@@ -88,7 +88,7 @@ public class UserDao {
      * @author janinus
      */
     public boolean updateStu(UserMode userMode) {
-        String sql = "update student set name=? ,javaScore=?,htmlScore = ? ,cssScore = ? where id = ?";
+        String sql = "update users set username=? ,password=? where id = ?";
         Object stuObj[] = new Object[] { userMode.getUsername(), userMode.getPassword()};
         return jdbcTemplate.update(sql, stuObj) == 1;
     }
@@ -101,7 +101,7 @@ public class UserDao {
      * @author janinus
      */
     public List<UserMode> topNum(int num) {
-        String sql = "select id,name,javaScore+htmlScore+cssScore from student order by javaScore+htmlScore+cssScore desc ,name asc limit ?";
+        String sql = "select id,username,javaScore+htmlScore+cssScore from users order by javaScore+htmlScore+cssScore desc ,name asc limit ?";
         return jdbcTemplate.query(sql, new RowMapper<UserMode>() {
 
             @Override

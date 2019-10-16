@@ -7,12 +7,14 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-    <import resource="/applicationContext.xml"/>
+    <!--<import resource="/WEB-INF/applicationContext.xml"/>-->
 
     <!-- 配置自动扫描的包 -->
     <context:component-scan base-package="servlet"></context:component-scan>
     <context:component-scan base-package="controller" />
 
+    <!-- 开启注解-->
+    <mvc:annotation-driven />
 
     <!-- 配置视图解析器 如何把handler 方法返回值解析为实际的物理视图 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -22,8 +24,23 @@
 
 
     <!-- 分解配置 jdbc.properites -->
-    <context:property-placeholder location="classpath:jdbc.properties" />
+    <!--<context:property-placeholder location="classpath:jdbc.properties" />-->
 
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
 
 
 </beans>

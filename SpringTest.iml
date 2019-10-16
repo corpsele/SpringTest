@@ -23,11 +23,9 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false" />
         <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
           <file>file://$MODULE_DIR$/web/WEB-INF/dispatcher-servlet.xml</file>
         </fileset>
-        <fileset id="fileset3" name="Spring Application Context (3)" removed="false" />
       </configuration>
     </facet>
   </component>
@@ -39,17 +37,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/.idea/libraries" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/libraries" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.22" level="application_server_libraries" />
-    <orderEntry type="library" name="Struts 2-2.5.14.1" level="project" />
-    <orderEntry type="library" name="Spring-4.3.18.RELEASE" level="project" />
-    <orderEntry type="library" name="Spring MVC-4.3.18.RELEASE" level="project" />
-    <orderEntry type="library" name="Spring Web Services-2.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-core:2.3.35" level="project" />
@@ -95,5 +88,8 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-el-api:9.0.22" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.5.4" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.15" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.5.0" level="project" />
   </component>
 </module>

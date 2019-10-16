@@ -35,9 +35,9 @@
 
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <!--加载驱动类-->
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         <!--数据库访问地址-->
-        <property name="url" value="jdbc:mysql://corpsele.top:3306/corpse"></property>
+        <property name="url" value="jdbc:mysql://corpsele.top:3306/corpse?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true&amp;user=root&amp;password=root&amp;useSSL=true&amp;serverTimezone=UTC"></property>
         <!--数据库访问用户名-->
         <property name="username" value="root"></property>
         <!--数据库访问密码-->
@@ -61,8 +61,8 @@
     <!-- dao层类 -->
     <bean id="dao" class="dao.UserDao"></bean>
     <!-- 控制层类 ，这个配置无效-->
-    <bean id="controller" class="controller.UserController">
-        <property name="dao" ref="dao"></property>
-    </bean>
+    <!--<bean id="controller" class="controller.UserController">-->
+        <!--<property name="dao" ref="dao"></property>-->
+    <!--</bean>-->
 
 </beans>

@@ -4,10 +4,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import model.UserMode;
 import dao.UserDao;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -21,7 +27,7 @@ public class UserController {
      * @return 返回值类型： String
      * @author janinus
      */
-    @RequestMapping("/all")
+    @RequestMapping("/getall")
     public String queryAll(Model model) {
         ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
         //从ioc容器中获取dao
@@ -51,25 +57,24 @@ public class UserController {
 
     /**
      * 添加新学生，并将结果返回给all页面，由all转发到主页
-     * @param username
-     * @param password
-     * @param model
+     * @param userMode
      * @return 返回值类型： String
      * @author janinus
      */
-    @RequestMapping("/addUser")
-    public String addStu(String username, String password, Model model) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    @ResponseBody
+    public String addStu(@RequestBody UserMode userMode) {
+        ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
         UserDao dao = (UserDao) context.getBean("dao");
-        UserMode userMode = new UserMode();
-        userMode.setUsername(username);
-        userMode.setPassword(password);
+//        UserMode userMode = new UserMode();
+//        userMode.setUsername(username);
+//        userMode.setPassword(password);
         boolean result = dao.addStu(userMode);
-        if (result)
-            model.addAttribute("msg", "<script>alert('添加成功！')</script>");
-        else
-            model.addAttribute("msg", "<script>alert('添加成功！')</script>");
-        return "all";
+//        if (result)
+//            model.addAttribute("msg", "<script>alert('添加成功！')</script>");
+//        else
+//            model.addAttribute("msg", "<script>alert('添加成功！')</script>");
+        return "success";
     }
 
     /**

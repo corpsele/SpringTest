@@ -47,19 +47,21 @@
         //     error: errCallBack,
         //     dataType: "text"
         // });
+        var userModel = {username: "corpse", password: "corpse"};
         $.ajax({
-           type: "post",
-            url: "http://localhost:8182/SpringTest/user/addUser.form",
-            data: JSON.stringify({"username": "4545", "passsword": "dfadfadf"}),
-            dataType: "json",
+           type: "POST",
+            url: "http://localhost:8050/SpringTest/user/addUser.form",
             // contentType: "application/x-www-form-urlencoded;charset=utf-8",
-            contentType: "application/json;charset=utf-8",
+            contentType: "application/json",
+            dataType:"json",
+            data: JSON.stringify(userModel),
             success: postSuccess,
             error: errCallBack
         });
     }
 
     function errCallBack(err) {
+        document.getElementById("divDisplay").innerText = JSON.stringify(err);
         alert(JSON.stringify(err));
     }
 
@@ -82,5 +84,7 @@
     <input type="text" id="password1" name="password1">
     <input type="submit" value="提交" id="submit1" name="submit1" class="ui-selectable">
 </form>
+<hr>
+<div id="divDisplay" name="divDisplay"></div>
 </body>
 </html>
