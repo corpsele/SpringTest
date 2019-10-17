@@ -47,10 +47,11 @@
         //     error: errCallBack,
         //     dataType: "text"
         // });
+        var contextPath = "${pageContext.request.contextPath}";
         var userModel = {username: "corpse", password: "corpse"};
         $.ajax({
            type: "POST",
-            url: "http://localhost:8050/SpringTest/user/addUser.form",
+            url: contextPath+"/user/addUser.form",
             // contentType: "application/x-www-form-urlencoded;charset=utf-8",
             contentType: "application/json",
             dataType:"json",
