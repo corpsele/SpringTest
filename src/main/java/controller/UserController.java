@@ -10,10 +10,7 @@ import model.UserMode;
 import dao.UserDao;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/user")
@@ -63,18 +60,24 @@ public class UserController {
      */
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     @ResponseBody
-    public String addStu(@RequestBody UserMode userMode) {
+    public Map<String,String> addStu(@RequestBody UserMode userMode) {
         ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
         UserDao dao = (UserDao) context.getBean("dao");
 //        UserMode userMode = new UserMode();
 //        userMode.setUsername(username);
 //        userMode.setPassword(password);
         boolean result = dao.addStu(userMode);
-//        if (result)
+        Map<String, String> map = new HashMap<String, String>();
+        if (result){
+           map.put("flag","success");
+        }else{
+            map.put("flag","failed");
+        }
+
 //            model.addAttribute("msg", "<script>alert('添加成功！')</script>");
 //        else
 //            model.addAttribute("msg", "<script>alert('添加成功！')</script>");
-        return "success";
+        return map;
     }
 
     /**
