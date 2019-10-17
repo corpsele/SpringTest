@@ -62,10 +62,10 @@ public class UserDao {
      * @author janinus
      */
     public boolean addStu(UserMode userMode) {
-        String sql = "insert into users(username,password) values(?,?)";
+        String sql = "insert into users(username,password,createtime) values(?,?,?)";
         return jdbcTemplate.update(sql,
-                new Object[] { userMode.getUsername(), userMode.getPassword()},
-                new int[] { Types.VARCHAR, Types.VARCHAR}) == 1;
+                new Object[] { userMode.getUsername(), userMode.getPassword(), userMode.getCreatetime()},
+                new int[] { Types.VARCHAR, Types.VARCHAR}, Types.DATE) == 1;
     }
 
     /**

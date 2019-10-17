@@ -1119,7 +1119,7 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="281" parent="2" name="users">
-      <Collation>utf8_general_ci</Collation>
+      <Collation>utf8mb4_bin</Collation>
     </table>
     <column id="282" parent="281" name="userid">
       <Position>1</Position>

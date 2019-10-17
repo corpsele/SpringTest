@@ -10,6 +10,8 @@ import model.UserMode;
 import dao.UserDao;
 
 import java.lang.reflect.Array;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -61,16 +63,21 @@ public class UserController {
      */
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,String> addStu(@RequestBody UserMode userMode) {
+    public Map<String,String> addStu(@RequestBody UserMode userMode, Model model) {
         ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
         UserDao dao = (UserDao) context.getBean("dao");
 //        UserMode userMode = new UserMode();
 //        userMode.setUsername(username);
 //        userMode.setPassword(password);
+//        Date date = new Date();
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        userMode.setCreatetime(new Date(new java.util.Date().getTime()));
         boolean result = dao.addStu(userMode);
         Map<String, String> map = new HashMap<String, String>();
         if (result){
            map.put("flag","success");
+           model.addAttribute("users", dao.queryAll());
         }else{
             map.put("flag","failed");
         }
