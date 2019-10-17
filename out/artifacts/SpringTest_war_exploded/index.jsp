@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/js/ajaxForm.js"></script>
@@ -70,6 +72,10 @@
         alert(JSON.stringify(response));
     }
 
+    function getAllUsers() {
+        $('#formGetAll').submit();
+    }
+
 </script>
 
 <form id="form1" name="form1" action="Add.action" method="post" class="ui-widget">
@@ -87,5 +93,10 @@
 </form>
 <hr>
 <div id="divDisplay" name="divDisplay"></div>
+<hr>
+<input type="button" id="btnGetAll" name="btnGetAll" value="查询" class="ui-button" onclick="getAllUsers()">
+<form id="formGetAll" name="formGetAll" action=<%=request.getServletContext().getContextPath()%>/user/getall.form method="get">
+</form>
+
 </body>
 </html>

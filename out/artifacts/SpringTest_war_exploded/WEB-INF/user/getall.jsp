@@ -15,6 +15,12 @@
 </head>
 <body>
 Congraduations
+<c:out value="${pageContext.request.getAttribute('users')}"></c:out>
+<c:if test="${not empty pageContext.request.getAttribute('users')}">
+    <c:forEach items="${pageContext.request.getAttribute('users')}" var="user">
+        <c:out value="${user.username}"></c:out>
+    </c:forEach>
+</c:if>
 
 </body>
 </html>

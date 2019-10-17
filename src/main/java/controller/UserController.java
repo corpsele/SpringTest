@@ -25,13 +25,14 @@ public class UserController {
      * @author janinus
      */
     @RequestMapping("/getall")
+    @ModelAttribute("userModel")
     public String queryAll(Model model) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
         //从ioc容器中获取dao
         UserDao dao = (UserDao) context.getBean("dao");
         model.addAttribute("users", dao.queryAll());
-        model.addAttribute("tops", dao.topNum(3));
-        return "index.jsp";
+//        model.addAttribute("tops", dao.topNum(3));
+        return "success";
     }
 
     /**
@@ -44,7 +45,7 @@ public class UserController {
      */
     @RequestMapping(value = "/queryByName")
     public String queryByName(String name, Model model) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
         //从ioc容器中获取dao
         UserDao dao = (UserDao) context.getBean("dao");
         model.addAttribute("users", dao.queryByName(name));
@@ -89,7 +90,7 @@ public class UserController {
      */
     @RequestMapping(value = "/deleteById")
     public String deleteById(String id, Model model) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
         UserDao dao = (UserDao) context.getBean("dao");
         boolean result = dao.deleteStu(Integer.parseInt(id));
         if (result)
@@ -110,7 +111,7 @@ public class UserController {
      */
     @RequestMapping(value = "/update")
     public String updateStu(String id, String username, String password,  Model model) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("WEB-INF/applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
         UserDao dao = (UserDao) context.getBean("dao");
         UserMode userMode = new UserMode();
         userMode.setUsername(username);

@@ -37,7 +37,7 @@ public class UserDao {
      * @author janinus
      */
     public List<UserMode> queryAll() {
-        String sql = "select id,username,password from users";
+        String sql = "select userid,username,password from users";
         //将查询结果映射到Student类中，添加到list中，并返回
         return jdbcTemplate.query(sql, new UserMapper());
     }
