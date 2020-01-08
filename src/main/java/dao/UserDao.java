@@ -37,7 +37,7 @@ public class UserDao {
      * @author janinus
      */
     public List<UserMode> queryAll() {
-        String sql = "select userid,username,password from users";
+        String sql = "select id,username,password,createtime from users";
         //将查询结果映射到Student类中，添加到list中，并返回
         return jdbcTemplate.query(sql, new UserMapper());
     }
@@ -64,8 +64,7 @@ public class UserDao {
     public boolean addStu(UserMode userMode) {
         String sql = "insert into users(username,password,createtime) values(?,?,?)";
         return jdbcTemplate.update(sql,
-                new Object[] { userMode.getUsername(), userMode.getPassword(), userMode.getCreatetime()},
-                new int[] { Types.VARCHAR, Types.VARCHAR}, Types.DATE) == 1;
+                new Object[] {userMode.getUsername(), userMode.getPassword(), userMode.getCreatetime()}) == 1;
     }
 
     /**
