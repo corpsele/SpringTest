@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApiAction {
 
@@ -56,5 +58,24 @@ public class ApiAction {
 
         System.out.println("method get call.");
         return Action.SUCCESS;
+    }
+
+
+    public List<UserMode> getArray() {
+        return array;
+    }
+
+    public void setArray(List<UserMode> array) {
+        this.array = array;
+    }
+
+    private List<UserMode> array;
+
+    public String getAll(){
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("/applicationContext.xml");
+        UserDao dao = (UserDao) context.getBean("dao");
+        array = dao.queryAll();
+        return "getall";
     }
 }

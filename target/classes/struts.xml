@@ -20,6 +20,9 @@
             <result name="success" type="json">
                 <param name="root">user</param>
             </result>
+            <result name="getall" type="json">
+                <param name="root">array</param>
+            </result>
         </action>
     </package>
 </struts>
