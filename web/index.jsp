@@ -99,8 +99,8 @@
 </form>
 <hr>
 <form id="form4" name="form4" action="api_json.action" method="post" class="ui-widget">
-    <%--<input type="text" id="userName" name="userName">--%>
-    <%--<input type="text" id="password" name="password">--%>
+    <input type="text" id="username" name="username">
+    <input type="text" id="password" name="password">
     <input type="submit" value="提交json" id="submit" name="submit" class="ui-selectable">
 </form>
 
