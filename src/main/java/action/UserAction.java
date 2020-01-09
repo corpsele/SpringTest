@@ -14,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
+//import com.opensymphony.xwork2.Action;
 
 
 @ParentPackage("struts-default")
@@ -60,6 +61,7 @@ public class UserAction extends ActionSupport {
             map.put("flag","failed");
         }
         return "add";
+//        return map.put("flag","success");
     }
 
 

@@ -97,6 +97,12 @@
 <input type="button" id="btnGetAll" name="btnGetAll" value="查询" class="ui-button" onclick="getAllUsers()">
 <form id="formGetAll" name="formGetAll" action=<%=request.getServletContext().getContextPath()%>/user/getall.form method="get">
 </form>
+<hr>
+<form id="form4" name="form4" action="api_json.action" method="post" class="ui-widget">
+    <%--<input type="text" id="userName" name="userName">--%>
+    <%--<input type="text" id="password" name="password">--%>
+    <input type="submit" value="提交json" id="submit" name="submit" class="ui-selectable">
+</form>
 
 </body>
 </html>

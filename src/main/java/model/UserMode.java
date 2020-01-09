@@ -23,12 +23,12 @@ public class UserMode {
     private String username;
     private String password;
 
-    public String getUserid() {
-        return userid;
+    public String getId() {
+        return id;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Date getCreatetime() {
@@ -39,6 +39,6 @@ public class UserMode {
         this.createtime = createtime;
     }
 
-    private String userid;
+    private String id;
     private Date createtime;
 }

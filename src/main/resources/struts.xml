@@ -12,16 +12,14 @@
     <!-- strtus2 开放动态方法访问 DMI-->
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
-    <!--<package name="adds" namespace="/adds" extends="struts-default">-->
-        <!--<action name="createUser" class="action.UserAction">-->
-            <!--<result name="success" type="dispatcher">-->
-                <!--<param name="location">/</param>-->
-            <!--</result>-->
+    <package name="strong" extends="struts-default,json-default">
+        <!--<action name="index">-->
+            <!--<result>/index.jsp</result>-->
         <!--</action>-->
-        <!--<action name="Add" class="action.UserAction">-->
-            <!--<result name="add" type="dispatcher">-->
-                <!--<param name="location">/</param>-->
-            <!--</result>-->
-        <!--</action>-->
-    <!--</package>-->
+        <action name="api_*" class="action.ApiAction" method="{1}">
+            <result name="success" type="json">
+                <param name="root">user</param>
+            </result>
+        </action>
+    </package>
 </struts>

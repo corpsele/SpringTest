@@ -13,7 +13,7 @@ public class UserMapper implements RowMapper<UserMode> {
         // TODO Auto-generated method stub
         UserMode userMode = new UserMode();
         try {
-            userMode.setUserid(String.valueOf(rs.getInt(1)));
+            userMode.setId(String.valueOf(rs.getInt(1)));
             userMode.setPassword(rs.getString(3));
             userMode.setUsername(rs.getString(2));
             userMode.setCreatetime(rs.getDate(4));
