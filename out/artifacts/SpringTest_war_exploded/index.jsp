@@ -13,12 +13,28 @@
 <script src="${pageContext.request.contextPath}/js/ajaxForm.js"></script>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/jquery-ui.css"></link>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/js/jquery-ui.theme.css"></link>
+<meta charset="UTF-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width " />
 <head>
     <title>SpringTest</title>
 </head>
 <body>
 
 <script>
+    //CSS里使用rem代替px，JS里根据屏幕大小修改rem的值
+//     window.setFontSize = function() {
+//         var size = document.documentElement.clientWidth / 750 * 100;
+// //  size = size > 50 ? size : 50
+// //  console.log(size);
+//         document.documentElement.style.fontSize = size.toString()  + "px";
+//     };
+//     setFontSize();
+//     //在屏幕大小变化时重新设置大小
+//     $(window).resize(function() {
+//         setFontSize()
+//     });
+
+
     $(function () {
         // alert("ready");
     });

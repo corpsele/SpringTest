@@ -10,6 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width " />
 <head>
     <title>Success</title>
 </head>
